@@ -2,24 +2,24 @@
 ## Project: madlib_cli
 ### Author: Walaa Alrefai
 
-Setup
-.env requirements (where applicable)
-i.e.
+## Setup
+ ### requirements.txt file 
+  
        exceptiongroup==1.1.1
        iniconfig==2.0.0
        packaging==23.1
        pluggy==1.0.0
        pytest==7.3.1
        tomli==2.0.1
+ ### pytest installation
 
 
 
 
-How to initialize/run your application (where applicable)
-e.g. python madlib.txt
+## to Run My application
+ python madlib.py
 
-Tests
-How do you run tests?
+## to tests type:
 pytest
-Any tests of note?
-my file doesnt opened , so I cant complete work
+ 
+[pull requist](https://github.com/WalaaAlrefai/madlib-cli/pull/1)
