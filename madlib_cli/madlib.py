@@ -1,7 +1,5 @@
 import re
-
-file = "assets/dark_and_stormy_night.txt"
-
+file = "../assets/madlibTemp.txt"
 def opening():
     print("""
   **************************************
