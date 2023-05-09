@@ -1,5 +1,7 @@
 import re
-file = "./assets/madlib.txt"
+
+file = "assets/madlib.txt"
+
 def opening():
     print("""
   **************************************
@@ -24,6 +26,6 @@ def read_template(template):
 
 if __name__ == "__main__":
     opening()
-    template = read_template(file)
+    template = read_template("assets/madlib.txt")
 
 
