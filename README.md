@@ -22,4 +22,4 @@
 ## to tests type:
 pytest
  
-[pull requist]()
+[pull requist](https://github.com/WalaaAlrefai/madlib-cli/pull/1)
