@@ -1,6 +1,6 @@
 import re
 
-file = "/home/student/madlib-cli/assets/dark_and_stormy_night.txt"
+file = "/home/student/madlib-cli/assets/madlib.txt"
 
 def opening():
     print("""
@@ -18,9 +18,13 @@ def word_list(arr):
 
 
 def read_template(template):
-    with open(template,'r') as read_file:
-        read_text = read_file.read()
-        return read_text
+       with open(template,'r') as read_file:
+          read_text = read_file.read()
+          try:
+            return read_text
+          
+          except:
+              raise FileNotFoundError   
 
 
 
@@ -31,8 +35,12 @@ def parse_template(template):
     return the tuple formated and the words seperated
     parse_template("It was a {Adjective} and {Adjective} {Noun}.") = 'It was a {} and {} {}' and ('dark', 'stormy', 'night')'''
     expected_stripped = r"{([\w ',.-]+)}"
+    # print(expected_stripped)
     expected_parts_list = tuple(re.findall(expected_stripped, template))
+    # print(expected_parts_list)
     expected_parts = re.sub(expected_stripped, '{}', template)
+    # print(expected_parts)pretty
+    bea
     return expected_parts, expected_parts_list
 
 
@@ -44,6 +52,9 @@ def merge(string, words):
     '''
     return string.format(*words)
 
+def write_output(string):
+    with open("/home/student/madlib-cli/assets/output.txt","w") as output_file:
+        output_file.write(string)
 
 
 if __name__ == "__main__":
@@ -51,8 +62,11 @@ if __name__ == "__main__":
     template = read_template(file)
     expected_parts, expected_parts_list = parse_template(template)
     word_text = word_list(expected_parts_list)
+    # print(word_text)
     mad_lib = merge(expected_parts, word_text)
+    write_output(mad_lib)
     print(mad_lib)
     print('Finished your Madlib!')
+    
 
 
